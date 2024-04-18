@@ -4,19 +4,24 @@ import pandas as pd
 # Lendo o arquivo CSV
 df = pd.read_csv('Dados_Diabetes.csv', sep=';')
 
-# Imprimindo o DataFrame para depuração
-st.write(df)
+# Criando o layout de grade
+col1, col2 = st.columns([2, 1])
 
-# Criando o gráfico de pizza
-st.title('Gráfico de Pizza para Diabetes')
+# Exibindo a depuração na primeira coluna
+with col1:
+    st.write(df)
 
-# Verificando se a coluna 'diabetes' está presente
-if 'diabetes' in df.columns:
-    # Contando os valores únicos na coluna 'Diabetes'
-    diabetes_counts = df['diabetes'].value_counts()
-    
-    # Exibindo o gráfico de pizza
-    st.bar_chart(df['diabetes'].value_counts())
-    st.write(diabetes_counts)
-else:
-    st.error("A coluna 'Diabetes' não foi encontrada no DataFrame.")
+# Criando o gráfico de pizza na segunda coluna
+with col2:
+    st.title('Gráfico de Pizza para Diabetes')
+
+    # Verificando se a coluna 'diabetes' está presente
+    if 'diabetes' in df.columns:
+        # Contando os valores únicos na coluna 'Diabetes'
+        diabetes_counts = df['diabetes'].value_counts()
+        
+        # Exibindo o gráfico de pizza
+        st.bar_chart(diabetes_counts)
+        st.write(diabetes_counts)
+    else:
+        st.error("A coluna 'Diabetes' não foi encontrada no DataFrame.")
