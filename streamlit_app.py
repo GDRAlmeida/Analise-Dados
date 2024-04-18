@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import plotly.express as px
 
 # Lendo o arquivo CSV
 df = pd.read_csv('Dados_Diabetes.csv', sep=';')
@@ -15,8 +16,9 @@ if 'diabetes' in df.columns:
     # Exibindo o gráfico de pizza
     st.write(diabetes_counts)
 
-    # Criando o gráfico de pizza com as informações de contagem
-    st.write("### Distribuição de Diabetes")
-    st.plotly_chart(diabetes_counts.plot.pie(autopct='%1.1f%%', figsize=(8, 8)))
+    # Criando o gráfico de pizza com as informações de contagem usando Plotly
+    fig = px.pie(values=diabetes_counts, names=diabetes_counts.index, 
+                 title='Distribuição de Diabetes', labels=diabetes_counts.index)
+    st.plotly_chart(fig, use_container_width=True)
 else:
     st.error("A coluna 'Diabetes' não foi encontrada no DataFrame.")
