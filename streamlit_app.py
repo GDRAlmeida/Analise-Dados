@@ -5,7 +5,7 @@ import pandas as pd
 df = pd.read_csv('Dados_Diabetes.csv', sep=';')
 
 # Criando o layout de grade
-col1, col2, col3, col4 = st.columns([2,1,2,2])
+col1, col2, col3, col4 = st.columns([2,1,2])
 
 # Exibindo a depuração na primeira coluna
 with col1:
@@ -26,6 +26,5 @@ with col3:
         
         # Exibindo o gráfico
         st.bar_chart(diabetes_counts)
-        st.title('Contagem')
     else:
         st.error("A coluna 'Diabetes' não foi encontrada no DataFrame.")
