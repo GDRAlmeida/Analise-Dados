@@ -22,11 +22,10 @@ with col3:
     # Verificando se a coluna 'diabetes' está presente
     if 'diabetes' in df.columns:
         # Contando os valores únicos na coluna 'Diabetes'
-        diabetes_counts = df['diabetes'].value_counts().T
+        diabetes_counts = df['diabetes'].value_counts()
         
         # Exibindo o gráfico
         st.bar_chart(diabetes_counts)
         st.title('Contagem')
-        st.write(diabetes_counts)
     else:
         st.error("A coluna 'Diabetes' não foi encontrada no DataFrame.")
