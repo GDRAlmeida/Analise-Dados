@@ -10,10 +10,10 @@ st.write(df)
 # Criando o gráfico de pizza
 st.title('Gráfico de Pizza para Diabetes')
 
-# Verificando se a coluna 'Diabetes' está presente
-if 'Diabetes' in df.columns:
+# Verificando se a coluna 'diabetes' está presente
+if 'diabetes' in df.columns:
     # Contando os valores únicos na coluna 'Diabetes'
-    diabetes_counts = df['Diabetes'].value_counts()
+    diabetes_counts = df['diabetes'].value_counts()
     
     # Exibindo o gráfico de pizza
     st.write(diabetes_counts)
