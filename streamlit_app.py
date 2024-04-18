@@ -1,7 +1,5 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
-import numpy as np
 
 # Lendo o arquivo CSV
 df = pd.read_csv('Dados_Diabetes.csv', sep=';')
@@ -22,7 +20,3 @@ if 'diabetes' in df.columns:
 else:
     st.error("A coluna 'Diabetes' não foi encontrada no DataFrame.")
 
-fig, ax = plt.subplots()
-ax.hist(diabetes_counts, bins=20)
-
-st.pyplot(fig)
