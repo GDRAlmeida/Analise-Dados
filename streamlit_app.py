@@ -26,6 +26,6 @@ with col3:
         diabetes_counts = df['diabetes'].value_counts()
         
         # Exibindo o gráfico
-        st.bar_chart(diabetes_counts, labels={'index': 'Possui', 'value': 'Contagem'})
+        st.bar_chart(diabetes_counts, labels={x='Falso', 'Verdadeiro')
     else:
         st.error("A coluna 'Diabetes' não foi encontrada no DataFrame.")
