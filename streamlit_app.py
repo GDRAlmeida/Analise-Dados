@@ -9,11 +9,12 @@ col1, col2 = st.columns([2, 1])
 
 # Exibindo a depuração na primeira coluna
 with col1:
+    st.title('Depuração')
     st.write(df)
 
-# Criando o gráfico de pizza na segunda coluna
+# Criando o gráfico na segunda coluna
 with col2:
-    st.title('Gráfico de Pizza para Diabetes')
+    st.title('Gráfico para Diabetes')
 
     # Verificando se a coluna 'diabetes' está presente
     if 'diabetes' in df.columns:
