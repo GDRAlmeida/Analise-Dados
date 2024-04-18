@@ -3,6 +3,7 @@ import pandas as pd
 
 # Lendo o arquivo CSV
 df = pd.read_csv('Dados_Diabetes.csv', sep=';')
+df['diabetes'] = df['diabetes'].replace({0: 'Não possui diabetes', 1: 'Possui diabetes'})
 
 # Criando o layout de grade
 col1, col2, col3 = st.columns([2,1,2])
