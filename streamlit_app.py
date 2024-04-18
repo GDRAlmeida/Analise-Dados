@@ -30,5 +30,5 @@ with col3:
         st.error("A coluna 'Diabetes' não foi encontrada no DataFrame.")
 
 with col4:
-    st.write('Contagem')
+    st.title('Contagem')
     st.write(diabetes_counts)
