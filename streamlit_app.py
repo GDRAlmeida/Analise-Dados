@@ -16,7 +16,7 @@ if 'diabetes' in df.columns:
     diabetes_counts = df['diabetes'].value_counts()
     
     # Exibindo o gráfico de pizza
+    st.bar_chart(df['diabetes'].value_counts())
     st.write(diabetes_counts)
 else:
     st.error("A coluna 'Diabetes' não foi encontrada no DataFrame.")
-
