@@ -5,7 +5,7 @@ import pandas as pd
 df = pd.read_csv('Dados_Diabetes.csv', sep=';')
 
 # Criando o layout de grade
-col1, col2, col3 = st.columns([2,1,1])
+col1, col2, col3 = st.columns([2,1,2])
 
 # Exibindo a depuração na primeira coluna
 with col1:
